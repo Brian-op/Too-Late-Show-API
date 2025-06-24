@@ -13,7 +13,7 @@ def signup():
     email = data.get ('email')
     password = data.get('password')
 
-    if User.query.filter((User.username ==username)| (User.eamil == email)).first():
+    if User.query.filter((User.username ==username)| (User.email == email)).first():
         return jsonify({'error':'Either the Email or Username you have entered already exists. TRY AGAIN'})
     
     new_user = User(username= username, email = email)
